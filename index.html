@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学习计划</title>
+	<link rel="stylesheet" type="text/css" href="css/new_file.css" />
+	<script type="text/javascript" src="js/new_file.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/template-web.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+<style>
+    .container {
+        width: 900px;
+        margin: 10px auto;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    table th {
+        background-color: #00aa7f;
+        color: white;
+    }
+
+    table td,
+    table tr {
+        padding: 5px;
+        border: 1px solid black;
+        text-align: center;
+		background-color: #F1F1F1;
+			
+    }
+
+    .add {
+        padding: 5px;
+        border: 1px solid black;
+        margin-bottom: 10px;
+		background-color: #F1F1F1;
+    }
+</style>
+
+<body>
+	<h1 style="text-align: center;">
+		<img src="img/161924772681675.png"></h1>	  
+		<div class="sidenav">
+				<a href="首页(p1).html">首页<br/>
+				</a>
+			  <a href="关于作者.html">&nbsp;<br/>
+			   关于作者<br/>
+			   &nbsp;</a>
+			  <a href="随记.html">随记<br/>
+			   &nbsp;</a>
+			  <a href="编程学习.html">编程学习<br/>
+			   &nbsp;</a>
+			  <a href="专业认识.html">专业认识
+			  &nbsp;</a>
+			  <a href="index.html">学习计划</a>
+		</div>
+		<div class="flex__container">
+		    <div class="flex__item"></div>
+		</div>
+
+    <div class="container">
+        <!-- 操作区域 -->
+        <div class="add">
+            日期:
+            <input type="text">学科:
+            <input type="text">时长:
+            <input type="text">具体:
+            <input type="text">
+            <input type="button" value="添加" id="addBtn">
+        </div>
+        <!-- 表格盒子 -->
+        <div class="table-box">
+            <table>
+                <!-- 表格头部 -->
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>日期</th>
+                        <th>学科</th>
+                        <th>时长</th>
+                        <th>具体</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+
+                    <script type="text/html" id="tmplt">
+                        {{ each data val index}}
+                        <tr>
+                            <td>{{ val.id }}</td>
+                            <td>{{ val.date }}</td>
+                            <td>{{ val.subject }}</td>
+                            <td>{{ val.time }}</td>
+                            <td>{{ val.crystallization }}</td>
+                            <td><a href="javascript:;" class="delete">删除</a></td>
+                        </tr>
+                        {{ /each }}
+                    </script>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
